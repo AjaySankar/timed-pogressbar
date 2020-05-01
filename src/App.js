@@ -1,12 +1,13 @@
 import React from 'react';
-// import TimedProgressBar from './TimedProgressBar';
 import './App.css';
-import bootstrap from "bootstrap"
 import TimedProgressBar from './TimedProgressBar'
 
 function App() {
   return (
-    <TimedProgressBar />
+    <React.Fragment>
+      <TimedProgressBar totalTime={4000} timerInterval={3000}/>
+      <TimedProgressBar totalTime={4000} timerInterval={1000}/>
+    </React.Fragment>
   );
 }
 
