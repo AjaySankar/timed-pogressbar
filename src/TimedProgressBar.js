@@ -8,7 +8,7 @@ class TimedProgressBar extends Component {
             progress: 0
         }
         this.intervalTimer = null;
-        this.timeElapsed = 0
+        this.timeElapsed = this.props.timerInterval
         this.updateProgress = this.updateProgress.bind(this)
     }
     componentDidMount() {
