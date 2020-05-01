@@ -24,7 +24,7 @@ class TimedProgressBar extends Component {
                 window.clearInterval(this.intervalTimer)
             }
             this.setState(() => ({
-                progress: percentageTimeElapsed
+                progress: parseInt(percentageTimeElapsed, 10)
             }))
             this.timeElapsed = this.timeElapsed + timerInterval
             const timeDiff = totalTime - this.timeElapsed
@@ -37,8 +37,9 @@ class TimedProgressBar extends Component {
 
     render() {
         const {progress} = this.state
+        const {variant} = this.props
         return (
-            <ProgressBar animated variant="success" now={progress} label={`${progress}%`}/>
+            <ProgressBar animated variant={variant} now={progress} label={`${progress}%`}/>
         );
     }
 }
